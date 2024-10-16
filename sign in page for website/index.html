@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login & Registeration</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>P2E GAME .</p>
+        </div>
+        <div class="nav-menu" id="navmenu">
+            <ul>
+                <li><a href="#" class="link active">Home</a></li>
+                <li><a href="#" class="link">About</a></li>
+                <li><a href="#" class="link">Services</a></li>
+                <li><a href="#" class="link">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginbtn" onclick="login()">Sign In</button>
+            <button class="btn " id="registerbtn" onclick="register()">Sign Up</button>
+        </div>
+
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="mymenufuntion()"></i>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="form-box">
+            <div class="login-container" id="login">
+                <div class="top">
+                    <header>Login</header>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Username or Email">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Sign In">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="Login-check">
+                        <label for="login-check">Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Forget Password</a></label>
+                    </div>
+                </div>
+                <div class="top">
+                    <span>Don't have an account?<a href="#" onclick="register()">Sign Up</a></span>
+                    <p>Or</p>
+                    <div class="social-media">
+                        <i><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAhVJREFUSEuNlYFt6zAMRB8nqTNJ40kaT5J0kuRPEneSeBMVlCiLtJTiCwgiyCKPPB4p4T+WACnfa7toJgjJ7vhbgnQm/qDbR0ce5C30GMBOy99Z4DPBmfLbgNX+f2zf85BtNaBh5vnrBNzN6Z73IFIFnDPg4GMB6HO9ArdyHK26epQDBXkA3/H+oQZmnJ2POQ2n6nQ64GtQ3y2uAGC0CC+Vg1GYecwaKgcbJHWg0dblss2ZLL4uQUUCzyScd711FMlJSFuRrAeQWxUy5CBOlV5fg4vAfaR3y+ZBYnE1mCB9UQJSdfk1I6w5cceqT3UkuxvJ+IULyL1FHSkV0i1ZwX0GKsnLQFE124W0c98FcxDFijAf+kBeQpreUlSKV4v7h9JyNlsSTg2gxPgayE5VYQUbsZZJeoKcPV12M7PjO/m5d23ztUFWThx2+xjI5yWwuDTTRd2/KfLOaB0Daq772leT69hXduSmqVGplFoGBV2H2vOgcT8qNKKHNd2VZNoft/yCoLIOAAoSaYrGDQCailrLV+pXIc01UFeDOCpaE+8oY4B2sVZhFlirGo8AeumdxscyjRm0YWfArtE8H3KFZON6l8cBoKuB8e6HY5TpUej24OwazwAWcCtyVpcskPSVa6JwONFxV7SscR1qPyRWs9OR8gH8K/L9+63uW7SqfSBB/04ctD8ItJfpAMwf9fyG2RXKWN6pXxSp7CTZwvNWAAAAAElFTkSuQmCC" /></i>
+                        <i><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAixJREFUSEt9lu15wjAMhF9NUjpJYZKGSaCTQCeBTkI2cZ/zp+w45AdJwJZ0ujsZMyAwXvNvwTBCXb+3qkXT+unVb21vfQIfyJfpd1t8aR+zdEfgCziCHSGswBPQ/S89dyETyhzTIdgAPgA3Bfb5+1Cx7hXsFBPnHzvE/sXBvADXBGdS3Ran0NyBn36HkVrUb7iAXWfU12UTGLmWKyElKddIstryehdoHrv2ZiXYGYI4qvh9Fx6ZzCLHAl2LlXzZK94VrT2fno+SYMmklrXiYOhpTNIQTqHGL09FXV6mFyNcMx8i7Jyr/k6oojQjioHjO9gvBKFvxRk/0qrn4Gaw5AQl8YsQg767hPR3QKZiTsn5DeYLgoJJ158QFoxbltgZ45ndox1CJSRqhXpeitD9YbAG8SCROx+kBIaUoARqyyMTpHYVZchQC8EuENTKP7AnhAvGgWBLlrg1BClLUlB6LomzqirMxE1EVgO1FjXLFw47oyX3pgR7JEtVo5LUoiLjQYHFySmoZs7DuVrJohIi5HSr86maZ24MobyPKnKbqw1XQp2cB7DFnwc70soKyk4eZtGOkTYzr8z4GZCTwdMDz4tqqtHRwzwtY3AyJo027Fxn3ViKDKgV3xDyuPaNyCfaJHYe790kjTJ9M7yiaZyJYp8aB3WnVOR90lGTnLw5iSqog9QFfJQj0whyaTk2J0fmiLiNiun/i/GfxF5BzWPjCegSzlvbV7R30m325oz/ZEXqJzv5Wu8AAAAASUVORK5CYII=" /></i>
+                        <i><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAd5JREFUSEuNlYuRwjAMRJ86CZXcUQlJJUAlQCXQydGJbmQ7jvyDZAbC+LOSdldCBNDti94Ttrs766IgaDpT/94L2YnSzysFSOft1Xm+5Nwgj8/LtlUe8hjfaXTpVlwOKvhIOAi/qJxBJyL2XeCqMIGcQK9pHVdBAH0CC/AeUSforMKto7rdmdL9e7wvKUDiQFDVCG4HroM6dM0uYQSLJYg3ygt4ILzW9RXHov850Es4iLwdwgx6y9lla6YAceMo8FqliBps+hpFv27JqrHPI70tiVtRQcooQVjli7dLLfIMnBOXX5Tubt9Blq3pKDSYQD1FRd3DaN6hwmKOKrSpPP6MFhz13qih8ng4ZM0cdR7NODYdJt+AvuQP9i1N046KDGkinwDTo3BA8LVzjg8msGiwd9nVvU6eQW79+dkZCXHJnHZYm2Gz9SpyW/dZ4BLHeOnDpqi4cAR9Vcnno7kNq6xNjxPIJdDSTL+c1QJyH1LXEdOA7TkjzLWjKh8dIYwG95Q6eQ3MOc84EUtaGqbCnJEFNA/FZuzn+VbEZtLYBz+pm238RiEEP8jst9O0/Jv0VMdx3fTPuKGKyzs84CjqeLyJXgYepVH1x6g3K4fuQUvG3FwXacyKNlbbA/qxV4R/J4rYHYJ+lokAAAAASUVORK5CYII=" /></i>
+
+                    </div>
+                </div>
+            </div>
+            <!------Registration Form------------->
+            <div class="register-container" id="register">
+                <div class="top">
+                    <header>Sign Up</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="First Name">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Last Name">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Email">
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="passwords" class="input-field" placeholder="Password">
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Register">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="register-check">
+                            <label for="register-check">Remember Me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Terms & Conditions</a></label>
+                        </div>
+                        <div class="top">
+                            <span> Have an account?<a href="#" onclick="login()">Login</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function mymenufuntion() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "navMenu") {
+                i.className += "responsive";
+            }
+            else {
+                i.className = "nav-menu";
+            }
+        }
+    </script>
+    <script>
+        var a = document.getElementById("loginbtn");
+        var b = document.getElementById("registerbtn");
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        function login() {
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            a.className += "white-btn";
+            b.className += "btn";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+        function register() {
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            a.className += "btn";
+            b.className += "white-btn";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+    </script>
+
+</body>
+
+</html>

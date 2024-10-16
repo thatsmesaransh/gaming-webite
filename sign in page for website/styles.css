@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    background: url(images/background.jpg);
+    background-size: cover;
+    background-repeat: none;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px ;
+    background: linear-gradient(rgba(39, 39, 39, 0.6),transparent);
+    z-index: 100;
+
+}
+.nav-logo p{
+    color: aliceblue;
+    font-size: 25px;
+    font-weight: 600;
+}
+.nav-menu ul {
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+.link:hover,
+.active{
+    border-bottom: 2px solid white;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgb(179, 70, 70);
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.btn:hover{
+    background: rgb(153, 110, 110);
+}
+.registerbtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(218, 188, 188, 0.589);
+    color: #081b29;
+    box-shadow: 0 0 20px rgba(218, 188, 188, 0.589);
+
+}
+.btn.btn.btn.white-btn:hover{
+    background: rgba(218, 188, 188, 0.589);
+    color: #081b29;
+    box-shadow: 0 0 20px rgb(129, 69, 77);
+}
+.nav-menu-btn{
+    display: none
+    ;
+}
+    
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: #081b29;
+    background: transparent;
+    border: 2px solid rgb(255,255, 255, .5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px black;
+}
+.form-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 512px;
+    height: 420px;
+    overflow: hidden;
+    z-index: 2;
+}
+.login-container{
+    position: absolute;
+    left: 4px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.register-container{/*The error must be here*/
+    position: absolute;
+    left: -520px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+}
+.top span{
+    color: white;
+    font-size: small;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+
+}
+.top span a{
+    font-weight: 500;
+    color: white;
+    margin-left: 5px;
+}
+.top p{
+    color: white;
+    font-size: small;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+header{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.two-forms{/*check this as well */
+    display: flex;
+    gap: 10px;
+}
+.input-field {
+    font-size: 15px;
+    background: rgba(184, 177, 177, 0.589);
+    color: white;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+.input-field:hover, 
+.input-field:focus{
+    background:rgba(218, 188, 188, 0.589) ;
+}
+::-webkit-input-placeholder{
+    color: white;
+}
+.input-box i{
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: white;
+}
+.submit{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(179, 64, 64);
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background:rgba(39, 39, 39, 0.6);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.submit:hover{
+    background: rgba(243, 101, 101, 0.6);
+    color: #081b29;
+    box-shadow:0 0 20px rgba(184, 111, 111, 0.6);
+}
+.two-col{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: small;
+}
+.two-col .one{
+    display: flex;
+    gap: 5px;
+}
+.two label a{
+    text-decoration: none;
+    color: white;
+}
+.two label a:hover{
+    text-decoration: underline;
+}
+.top .social-media{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.social-media i img{
+    font-size: 28px;
+    margin-left: 15px;
+    padding: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+.social-media i img:nth-child(1){
+    color: #eee;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid #eee;
+}
+.social-media i img:nth-child(1):hover{
+    color: #eee;
+    background: transparent;
+    border: 2px solid black;
+}
+.social-media  i img:nth-child(2){
+    color: #eee;
+    background: #f00;
+    border-radius: 50%;
+    border: 2px solid #eee;
+}
+.social-media  i img:nth-child(2):hover{
+    color: #eee;
+    background: #f00;
+    border: 2px solid #f00;
+}
+.social-media i img:nth-child(3){
+    color: #eee;
+    background: #098dc1;
+    border-radius: 50%;
+    border: 2px solid #eee;
+}
+.social-media i img:nth-child(3):hover{
+    color: #eee;
+    background: #098dc1;
+    border: 2px solid #098dc1;
+}
+@media only screen and(max-width:786px){
+    .nav-button{
+        display: none;
+    }
+    .nav.responsive{
+        top: 100px;
+    }
+    .nav{
+        position:absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255,255,255,0.2);
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(20px);
+        transition: .3s;
+    }
+    .nav-menu-btn{
+        display: block;
+    }
+    .nav-menu u1{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-menu-btn i {
+        font-size: 25px;
+        color: #eee;
+        padding: 10px;
+        background: rgba(255,255,255,0.2);
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    
+}
+@media only screen and(max-width:540px){
+    .wrapper{
+        min-height: 100vh;
+    }
+    .form-box{
+        width: 100%;
+        height: 500px;
+    }
+    .register-container
+    ,.login-container{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .register-container .two-forms{
+        flex-direction: column;
+        gap: 0;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
